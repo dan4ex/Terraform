@@ -1,0 +1,6 @@
+---
+  - hosts: GCP
+
+    roles:
+      - nginx
+      - configure_nginx

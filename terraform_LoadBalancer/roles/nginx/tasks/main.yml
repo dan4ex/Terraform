@@ -1,0 +1,13 @@
+---
+      - name: Install python
+        raw: "sudo apt update && sudo apt install -y python"
+
+      - name: Install nginx
+        apt:
+          name: nginx
+          state: present
+
+      - name: Start nginx
+        service:
+          name: nginx
+          state: started

@@ -1,0 +1,5 @@
+---
+  worker_connections: 500
+  sendfile: on
+  tcp_nopush: on
+  tcp_nodelay: on

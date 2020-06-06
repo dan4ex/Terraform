@@ -1,0 +1,20 @@
+---
+  - name: Copy site configuration
+    template:
+      src: proxydan4ex.devops.rebrain.srwx.net.j2
+      dest: /etc/nginx/sites-enabled/default
+      owner: root
+      group: root
+      mode: 0644
+    notify: reload nginx
+    when: inventory_hostname in groups['proxydan4ex']
+
+  - name: Copy index.html configuration
+    template:
+      src: index.html.j2
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
+    notify: reload nginx
+    when: inventory_hostname in groups['nginxdan4ex']
